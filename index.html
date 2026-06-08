@@ -251,7 +251,7 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        .grid-4, .grid-3, .grid-guilds, .grid-former, .grid-characters {
+        .grid-4, .grid-3, .grid-guilds, .grid-former, .grid-characters, .grid-dukes {
             display: grid;
             gap: 1.5rem;
             margin-top: 1rem;
@@ -271,6 +271,10 @@
 
         .grid-former, .grid-characters {
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        }
+
+        .grid-dukes {
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
         }
 
         /* بطاقات النقابات المميزة */
@@ -345,7 +349,7 @@
             line-height: 1.4;
         }
 
-        /* بطاقات الشخصيات العادية */
+        /* بطاقات الشخصيات */
         .character-card {
             text-align: center;
             background: rgba(22, 28, 38, 0.85);
@@ -373,6 +377,45 @@
             font-size: 0.7rem;
             color: #d4c28c;
             font-style: italic;
+        }
+
+        /* بطاقات الدوقات */
+        .duke-card {
+            text-align: center;
+            background: rgba(22, 28, 38, 0.85);
+            border-radius: 32px;
+            padding: 1.2rem;
+            transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 2px solid var(--gold-primary);
+            cursor: pointer;
+        }
+
+        .duke-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-gold);
+        }
+
+        .duke-name {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: var(--gold-light);
+            margin-bottom: 0.8rem;
+            border-bottom: 1px dashed var(--gold-primary);
+            display: inline-block;
+            padding-bottom: 0.3rem;
+        }
+
+        .duke-members {
+            display: flex;
+            flex-direction: column;
+            gap: 0.3rem;
+            margin-top: 0.5rem;
+        }
+
+        .duke-members span {
+            font-size: 0.85rem;
+            color: #e6dcc5;
+            display: block;
         }
 
         /* باقي البطاقات */
@@ -441,7 +484,7 @@
         /* سجل القيادة والتاريخ */
         .history-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
             gap: 1.8rem;
         }
         .history-card {
@@ -725,10 +768,12 @@
                             </div>
                         </div>
                         <div class="history-details">
-                            <div class="history-item"><i class="fas fa-flag-checkered"></i> <strong>مملكة البداية:</strong> مملكة الشمال</div>
-                            <div class="history-item"><i class="fas fa-snowflake"></i> <strong>النقابة الأم:</strong> سنو ❄️</div>
-                            <div class="history-item"><i class="fas fa-chart-line"></i> <strong>مسيرة الرتب:</strong> عميد سنو ← أدميرال سنو ← دوق (سنو + ثندر) ← مؤسس 9 نقابات ← الجيروسي</div>
-                            <div class="history-item"><i class="fas fa-trophy"></i> <strong>الإنجاز الأعظم:</strong> توحيد النقابات تحت راية مملكة سوفييت</div>
+                            <div class="history-item"><i class="fas fa-gem"></i> <strong>البداية:</strong> نقابة دايموند في سكاي</div>
+                            <div class="history-item"><i class="fas fa-map-marker-alt"></i> <strong>الانتقال إلى:</strong> إيند (رتبة عميد)</div>
+                            <div class="history-item"><i class="fas fa-users"></i> <strong>مؤسس مشارك:</strong> نقابة شادو في مملكة الشمال</div>
+                            <div class="history-item"><i class="fas fa-snowflake"></i> <strong>الانتقال إلى سنو:</strong> نائب أدميرال ← أدميرال</div>
+                            <div class="history-item"><i class="fas fa-bolt"></i> <strong>مؤسس نقابة ثندر</strong> وبداية الدوقية</div>
+                            <div class="history-item"><i class="fas fa-crown"></i> <strong>الإنجاز الأعظم:</strong> تأسيس باقي مملكة سوفييت</div>
                         </div>
                     </div>
 
@@ -776,9 +821,10 @@
                             </div>
                         </div>
                         <div class="history-details">
-                            <div class="history-item"><i class="fas fa-flag-checkered"></i> <strong>مملكة البداية:</strong> مملكة إيند</div>
-                            <div class="history-item"><i class="fas fa-moon"></i> <strong>النقابة الأم:</strong> شادو 🌑</div>
-                            <div class="history-item"><i class="fas fa-chart-line"></i> <strong>مسيرة الرتب:</strong> عضو شادو ← مؤسس نقابة روما ← أدميرال روما ← نائب الجيروسي</div>
+                            <div class="history-item"><i class="fas fa-gem"></i> <strong>البداية:</strong> مملكة إيند - نقابة دايموند (نائب أدميرال)</div>
+                            <div class="history-item"><i class="fas fa-map-marker-alt"></i> <strong>الانتقال إلى الشمال:</strong> أدميرال نقابة شادو</div>
+                            <div class="history-item"><i class="fas fa-landmark"></i> <strong>دوق هوغرتس</strong> ثم البداية في سوفييت</div>
+                            <div class="history-item"><i class="fas fa-chart-line"></i> <strong>مسيرة الرتب في سوفييت:</strong> أدميرال روما ← نائب الجيروسي</div>
                             <div class="history-item"><i class="fas fa-crown"></i> <strong>الإنجاز الأعظم:</strong> بناء نقابة روما من الصفر وقيادتها للقمة</div>
                         </div>
                     </div>
@@ -786,10 +832,11 @@
             </div>
         </section>
 
-        <!-- القسم 3: شخصيات المملكة (بدون صور) -->
+        <!-- القسم 3: شخصيات المملكة -->
         <section id="characters">
             <h2><i class="fas fa-star"></i> شخصيات المملكة</h2>
             <div class="glass-section">
+                <!-- الشخصيات الأساسية -->
                 <div class="grid-characters">
                     <div class="character-card">
                         <div class="character-name">سيري 💎</div>
@@ -808,25 +855,59 @@
                         <div class="character-title">نائب ملك بولاريس</div>
                     </div>
                 </div>
+
+                <h3 style="margin-top: 2rem;"><i class="fas fa-crown"></i> الدوقات وأعضائهم</h3>
+                <div class="grid-dukes">
+                    <div class="duke-card">
+                        <div class="duke-name">دوق أنوس 👑</div>
+                        <div class="duke-members">
+                            <span>🔸 ماكيما (نائبة)</span>
+                            <span>🔸 هوشينو (نائبة)</span>
+                        </div>
+                    </div>
+                    <div class="duke-card">
+                        <div class="duke-name">دوق غوكو 👑</div>
+                        <div class="duke-members">
+                            <span>🔸 يوتا (نائب)</span>
+                            <span>🔸 أوراراكا (نائبة)</span>
+                        </div>
+                    </div>
+                    <div class="duke-card">
+                        <div class="duke-name">دوق موزان 👑</div>
+                        <div class="duke-members">
+                            <span>🔸 أيزن (نائب)</span>
+                            <span>🔸 إيسديث (نائبة)</span>
+                        </div>
+                    </div>
+                    <div class="duke-card">
+                        <div class="duke-name">دوق غوجيتا 👑</div>
+                        <div class="duke-members">
+                            <span>🔸 ميسا (نائبة)</span>
+                            <span>🔸 سايكو (نائب)</span>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
-        <!-- القسم 4: النقابات -->
+        <!-- القسم 4: النقابات - تم إضافة referrerpolicy="no-referrer" لجميع الصور -->
         <section id="guilds">
             <h2><i class="fas fa-flag-checkered"></i> النقابات</h2>
             <div class="glass-section">
                 <div class="grid-guilds">
-                    <div class="guild-card"><img class="guild-img" src="https://i.postimg.cc/9QfhR1SK/IMG-20260608-WA0014.jpg" alt="سنو"><div class="guild-name-card">نقابة سنو ❄️</div><div class="guild-theme">"ثلوج وأسرار"</div><div class="guild-desc">حراس الجبال البيضاء</div></div>
-                    <div class="guild-card"><img class="guild-img" src="https://i.postimg.cc/9QfhR1SB/IMG-20260608-WA0015.jpg" alt="ثندر"><div class="guild-name-card">نقابة ثندر ⚡</div><div class="guild-theme">"صاعقة ودمار"</div><div class="guild-desc">فرسان العاصفة</div></div>
-                    <div class="guild-card"><img class="guild-img" src="https://i.postimg.cc/0yNsMZ3n/IMG-20260608-WA0016.jpg" alt="روما"><div class="guild-name-card">نقابة روما 🏰</div><div class="guild-theme">"حضارة وعراقة"</div><div class="guild-desc">حراس القلعة القديمة</div></div>
-                    <div class="guild-card"><img class="guild-img" src="https://i.postimg.cc/g2cZwFG9/IMG-20260608-WA0026.jpg" alt="بريسك"><div class="guild-name-card">نقابة بريسك 🧊</div><div class="guild-theme">"جليد وقسوة"</div><div class="guild-desc">قلوبهم باردة كالثلج</div></div>
-                    <div class="guild-card"><img class="guild-img" src="https://i.postimg.cc/htGBzMw1/IMG-20260608-WA0017.jpg" alt="نوفيرس"><div class="guild-name-card">نقابة نوفيرس ♠️</div><div class="guild-theme">"بستوني وليل"</div><div class="guild-desc">جواسيس الظل</div></div>
-                    <div class="guild-card"><img class="guild-img" src="https://i.postimg.cc/6pQX2zS0/IMG-20260608-WA0018.jpg" alt="هايزل"><div class="guild-name-card">نقابة هايزل 🗻</div><div class="guild-theme">"جبل وصخر"</div><div class="guild-desc">عمالقة الجبال</div></div>
-                    <div class="guild-card"><img class="guild-img" src="https://i.postimg.cc/13zQnMTd/IMG-20260608-WA0023.jpg" alt="فريكس"><div class="guild-name-card">نقابة فريكس 🌬️</div><div class="guild-theme">"رياح وحرية"</div><div class="guild-desc">أسياد السماء</div></div>
-                    <div class="guild-card"><img class="guild-img" src="https://i.postimg.cc/52tVYpGR/IMG-20260608-WA0022.jpgوخفاء" alt="كاردن"><div class="guild-name-card">نقابة كاردن ☃️</div><div class="guild-theme">"حديقة وسحر"</div><div class="guild-desc">حراس الطبيعة</div></div>
-                    <div class="guild-card"><img class="guild-img" src="https://i.postimg.cc/XYvbGxh1/IMG-20260608-WA0021.jpg" alt="داسك"><div class="guild-name-card">نقابة داسك 🌒</div><div class="guild-theme">"غسق وخفاء "</div><div class="guild-desc">محاربو الشفق</div></div>
-                    <div class="guild-card"><img class="guild-img" src="https://i.postimg.cc/wjBpyFPf/IMG-20260608-WA0020.jpg" alt="ليكسث"><div class="guild-name-card">نقابة ليكسث 🦇</div><div class="guild-theme">"خفافيش وليل"</div><div class="guild-desc">فرسان الليل</div></div>
-                    <div class="guild-card"><img class="guild-img" src="https://i.postimg.cc/0yNsMZ3h/IMG-20260608-WA0025.jpg" alt="اونيرس"><div class="guild-name-card">نقابة اونيرس 🔱</div><div class="guild-theme">"رمح وبحر"</div><div class="guild-desc">حماة السواحل</div></div>
+                    <div class="guild-card"><img class="guild-img" referrerpolicy="no-referrer" src="https://i.postimg.cc/9QfhR1SK/IMG-20260608-WA0014.jpg" alt="سنو"><div class="guild-name-card">نقابة سنو ❄️</div><div class="guild-theme">"ثلوج وأسرار"</div><div class="guild-desc">حراس الجبال البيضاء</div></div>
+                    <div class="guild-card"><img class="guild-img" referrerpolicy="no-referrer" src="https://i.postimg.cc/9QfhR1SB/IMG-20260608-WA0015.jpg" alt="ثندر"><div class="guild-name-card">نقابة ثندر ⚡</div><div class="guild-theme">"صاعقة ودمار"</div><div class="guild-desc">فرسان العاصفة</div></div>
+                    <div class="guild-card"><img class="guild-img" referrerpolicy="no-referrer" src="https://i.postimg.cc/0yNsMZ3n/IMG-20260608-WA0016.jpg" alt="روما"><div class="guild-name-card">نقابة روما 🏰</div><div class="guild-theme">"حضارة وعراقة"</div><div class="guild-desc">حراس القلعة القديمة</div></div>
+                    <div class="guild-card"><img class="guild-img" referrerpolicy="no-referrer" src="https://i.postimg.cc/g2cZwFG9/IMG-20260608-WA0026.jpg" alt="بريسك"><div class="guild-name-card">نقابة بريسك 🧊</div><div class="guild-theme">"جليد وقسوة"</div><div class="guild-desc">قلوبهم باردة كالثلج</div></div>
+                    <div class="guild-card"><img class="guild-img" referrerpolicy="no-referrer" src="https://i.postimg.cc/0yNsMZ3h/IMG-20260608-WA0025.jpg" alt="نوفيرس"><div class="guild-name-card">نقابة نوفيرس ♠️</div><div class="guild-theme">"بستوني وليل"</div><div class="guild-desc">جواسيس الظل</div></div>
+                    <div class="guild-card"><img class="guild-img" referrerpolicy="no-referrer" src="https://i.postimg.cc/6pQX2zS0/IMG-20260608-WA0018.jpg" alt="هايزل"><div class="guild-name-card">نقابة هايزل 🗻</div><div class="guild-theme">"جبل وصخر"</div><div class="guild-desc">عمالقة الجبال</div></div>
+                    <div class="guild-card"><img class="guild-img" referrerpolicy="no-referrer" src="https://i.postimg.cc/13zQnMTd/IMG-20260608-WA0023.jpg" alt="فريكس"><div class="guild-name-card">نقابة فريكس 🌬️</div><div class="guild-theme">"رياح وحرية"</div><div class="guild-desc">أسياد السماء</div></div>
+                    <div class="guild-card"><img class="guild-img" referrerpolicy="no-referrer" src="https://i.postimg.cc/52tVYpGR/IMG-20260608-WA0022.jpg" alt="كاردن"><div class="guild-name-card">نقابة كاردن ☃️</div><div class="guild-theme">"حديقة وسحر"</div><div class="guild-desc">حراس الطبيعة</div></div>
+                    <div class="guild-card"><img class="guild-img" referrerpolicy="no-referrer" src="https://i.postimg.cc/XYvbGxh1/IMG-20260608-WA0021.jpg" alt="داسك"><div class="guild-name-card">نقابة داسك 🌒</div><div class="guild-theme">"غسق وخفاء"</div><div class="guild-desc">محاربو الشفق</div></div>
+                    <div class="guild-card"><img class="guild-img" referrerpolicy="no-referrer" src="https://i.postimg.cc/wjBpyFPf/IMG-20260608-WA0020.jpg" alt="ليكسث"><div class="guild-name-card">نقابة ليكسث 🦇</div><div class="guild-theme">"خفافيش وليل"</div><div class="guild-desc">فرسان الليل</div></div>
+                    <div class="guild-card"><img class="guild-img" referrerpolicy="no-referrer" src="https://i.postimg.cc/0yNsMZ3h/IMG-20260608-WA0025.jpg" alt="اونيرس"><div class="guild-name-card">نقابة اونيرس 🔱</div><div class="guild-theme">"رمح وبحر"</div><div class="guild-desc">حماة السواحل</div></div>
+                    <div class="guild-card"><img class="guild-img" referrerpolicy="no-referrer" src="https://i.postimg.cc/CLYYQp7f/IMG-20260608-WA0083.jpg" alt="برلين"><div class="guild-name-card">نقابة برلين 🏛️</div><div class="guild-theme">"نظام وقوة"</div><div class="guild-desc">حراس المدينة الحديدية</div></div>
+                    <div class="guild-card"><img class="guild-img" referrerpolicy="no-referrer" src="https://i.postimg.cc/pdgMQwrG/IMG-20260608-WA0082.jpg" alt="فيليريا"><div class="guild-name-card">نقابة فيليريا ⛩️</div><div class="guild-theme">"هدوء وتأمل"</div><div class="guild-desc">حراس المعابد المقدسة</div></div>
                 </div>
             </div>
         </section>
@@ -857,7 +938,7 @@
 
         <!-- توقيع رودو دوق اراكيس -->
         <div class="signature-section">
-            <div class="signature-text">بخالص الشكر والتقدير</div>
+            <div class="signature-text">بخالص الشكر والتقدير فريق تطوير سوفييت</div>
             <div class="signature-name">✍️ رودو دوق اراكيس</div>
         </div>
 
@@ -914,7 +995,7 @@
             window.scrollTo({ top: 0, behavior: 'smooth' });
         });
 
-        const cards = document.querySelectorAll('.card, .guild-card, .character-card, .glass-section, .signature-section, .history-card');
+        const cards = document.querySelectorAll('.card, .guild-card, .character-card, .glass-section, .signature-section, .history-card, .duke-card');
         const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -50px 0px' };
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
@@ -943,4 +1024,4 @@
         });
     </script>
 </body>
-  </html>
+</html>
